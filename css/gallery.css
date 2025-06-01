@@ -1,0 +1,141 @@
+/* Gallery Section Styles */
+.gallery {
+  background-color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: var(--primary);
+  color: white;
+  position: relative;
+}
+
+.testimonials .section-title {
+  color: white;
+}
+
+.testimonials-slider {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.testimonial-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s ease;
+}
+
+.testimonial-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.testimonial-content {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.testimonial-content p {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.testimonial-content p::before,
+.testimonial-content p::after {
+  content: '"';
+  font-size: 1.5em;
+  color: var(--accent);
+}
+
+.testimonial-author h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.testimonial-author span {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.testimonial-prev,
+.testimonial-next {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-dots {
+  display: flex;
+  gap: var(--space-sm);
+  margin: 0 var(--space-md);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: white;
+  transform: scale(1.2);
+}
